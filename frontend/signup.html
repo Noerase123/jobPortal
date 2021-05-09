@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hands</title>
+  <link rel="stylesheet" href="styles/core.css">
+  <link rel="stylesheet"
+    href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+    integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <section>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="opacity: 70%; box-shadow: 0 4px 2px -2px rgb(180, 180, 180);">
+      <a class="navbar-brand" href="index.html">
+        <!-- <img src="assets/sample_logo.png" style="height: 50px;"/> -->
+        <i class="far fa-handshake" style="font-size: 25px; color: #3A5F0B;"></i>
+        Hands
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="mr-auto"></ul>
+        <div class="d-flex">
+          <div class="p-2">
+            <a href="index.html" class="btn btn-raised text-light"
+              style="background-color: #5c8b1e; border-radius: 20px;padding: 10px;width: 100px;">Login</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div>
+      <img class="imgBG" src="assets/hands_bg.jpg" />
+      <div class="container">
+        <div class="card boardSignup" style="position: absolute;">
+          <div class="card-body">
+            <h5 class="card-title text-center">Create an Account</h5>
+            <hr />
+            <form id="signupForm" method="POST" class="needs-validation" novalidate>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="inputFirstName" class="bmd-label-floating">First Name</label>
+                    <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" required>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="inputLastName" class="bmd-label-floating">Last Name</label>
+                    <input type="text" class="form-control" id="inputLastName" name="inputLastName" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputLocation" class="bmd-label-floating">Location</label>
+                <input type="text" class="form-control" id="inputLocation" name="inputLocation" required>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail" class="bmd-label-floating">Email</label>
+                <input type="text" class="form-control" id="inputEmail" name="inputEmail" required>
+              </div>
+              <div class="form-group">
+                <label for="inputContactNum" class="bmd-label-floating">Contact Number</label>
+                <input type="text" class="form-control" id="inputContactNum" name="inputContactNum" required>
+              </div>
+              <div class="form-group">
+                <label for="inputUsername" class="bmd-label-floating">Username</label>
+                <input type="text" class="form-control" id="inputUsername" name="inputUsername" required>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword" class="bmd-label-floating">Password</label>
+                <input type="password" class="form-control" id="inputPassword" name="inputPassword" required>
+              </div>
+              <div class="form-group">
+                <label for="inputCPassword" class="bmd-label-floating">Confirm Password</label>
+                <input type="password" class="form-control" id="inputCPassword" name="inputCPassword" required>
+              </div>
+              <button type="submit" id="signupBtn" data-toggle="snackbar" data-content="New User Registered!" class="form-control btn text-light"
+                style="border-radius: 20px;padding: 10px;background-color: #3A5F0B">Signup</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="scripts/pages/signup.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+    integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/FezVrasta/snackbarjs/1.1.0/dist/snackbar.min.js"></script>
+  <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
+</body>
+
+</html>

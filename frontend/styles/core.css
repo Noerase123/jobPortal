@@ -1,0 +1,182 @@
+section {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* login page */
+.background-body {
+    position: relative;
+}
+
+.nav-css {
+    box-shadow: 0 4px 2px -2px rgb(180, 180, 180);
+}
+
+.nav-logo {
+    height: 50px;
+}
+
+.card-login {
+    position: absolute;
+}
+
+.imgBG {
+    width: 100%;
+    opacity: 70%;
+}
+
+#loginBtn {
+    margin-top: 10px;
+}
+
+.boardLogin {
+    /* position: absolute; */
+    top: 25%;
+    left: 35%;
+    width: 30%;
+    margin-top: 50px;
+}
+
+.boardSignup {
+    /* position: absolute; */
+    top: 15%;
+    left: 35%;
+    width: 30%;
+    margin-top: 50px;
+}
+
+/* jobListings css  */
+
+.dropdown-option {
+    left: -150px;
+    width: 220px;
+}
+
+.bg-content {
+    background-color: #3A5F0B;
+    width: 100%;
+    padding: 50px;
+    opacity: 70%;
+}
+
+.text-default-color {
+    color: #3A5F0B;
+}
+
+.text-default-color :hover {
+    color: #5c8b1e;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.profile-css {
+    margin-top: -30px;
+}
+
+.profile-item-css {
+    text-decoration: none;
+    color: #000;
+}
+
+.search-bar-css {
+    padding: 20px;
+    margin-top: -30px;
+}
+
+.btn-default-color {
+    background-color: #5c8b1e;
+}
+
+.btn-design {
+    border-radius: 20px; 
+    padding: 10px;
+}
+
+.btn-modal {
+    width: 45%;
+}
+
+.navbar-nav li {
+    display: none;
+}
+
+/* start card css  */
+.card-background {
+    background-color: #fff;
+}
+.card-width {
+    width: 100%;
+}
+.job-title {
+    margin-right: 10px;
+}
+/* end card css */
+
+/* screen responsive only */
+
+@media only screen and (max-width: 990px) {
+    .boardLogin {
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        margin-top: 50px;
+    }
+    .boardSignup {
+        top: 15%;
+        left: 25%;
+        width: 50%;
+        margin-top: 50px;
+    }
+    .user_nav {
+        justify-content: space-between;
+    }
+    .nav_account {
+        display: none;
+    }
+    .navbar-nav li {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .boardLogin {
+        top: 25%;
+        left: 15%;
+        width: 70%;
+        margin-top: 50px;
+    }
+    .boardSignup {
+        top: 15%;
+        left: 15%;
+        width: 70%;
+        margin-top: 50px;
+    }
+    .profile-css li a span {
+        display: none;
+    }
+    .profile-css li a i {
+        margin-left: 20px;
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .boardLogin {
+        top: 25%;
+        left: 5%;
+        width: 90%;
+        margin-top: 50px;
+    }
+    .boardSignup {
+        top: 15%;
+        left: 5%;
+        width: 90%;
+        margin-top: 50px;
+    }
+    .search-bar-css {
+        padding: 10px;
+        margin-top: 20px;
+    }
+    .profile-css li a span {
+        display: inline;
+    }
+}

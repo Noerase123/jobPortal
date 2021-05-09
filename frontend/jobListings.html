@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands</title>
+    <link rel="stylesheet" href="styles/core.css">
+    <link rel="stylesheet"
+      href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+      integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <section>
+        <!-- breadcrumb -->
+        <small>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">Home</li>
+                    <li class="breadcrumb-item active" aria-current="page">Poster Board</li>
+                </ol>
+            </nav>
+        </small>
+        <!-- navigation bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: -20px;">
+            <a class="navbar-brand" href="index.html">
+                <i class="far fa-handshake" style="font-size: 25px; color: #3A5F0B;"></i>
+                Hands <br /> <small>
+                </small>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#profile_nav"><i class="fas fa-user"></i> Your Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#favorites_nav"><i class="fas fa-heart"></i> Favorites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Log out</a>
+                    </li>
+                </ul>
+                <div class="d-flex user_nav">
+                    <div class="p-2">
+                        <button type="button" data-toggle="modal" data-target="#postJobModal"
+                            class="btn text-light btn-raised" style="border-radius: 20px;padding: 10px;width: 110%; background-color: #5c8b1e;"><i class="fa fa-plus"></i> Post a
+                            Job</button>
+                    </div>
+                    <div class="p-2 nav_account">
+                        <div class="dropdown">
+                            <button class="btn btn-default btn-raised dropdown-toggle" style="border-radius: 20px;padding: 10px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Account
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="left: -90px; width: 220px;">
+                                <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Your Profile</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-heart"></i> Favorites</a>
+                                <a class="dropdown-item" href="#" id="logoutBtn2"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Content -->
+        <div style="background-color: #f8f9fa;">
+            <div class="bg-content"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <!-- profile information -->
+                        <ul id="profileSection" class="card list-group profile-css">
+                            
+                            <li class="list-group-item">
+                                <a href="#profile" class="profile-item-css">
+                                    <i class="fas fa-user-circle"></i> <span>Profile</span>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="profile-item-css" data-toggle="collapse" href="#collapseExample" role="button"
+                                    aria-expanded="false" aria-controls="collapseExample">
+                                    <i class="fas fa-heart"></i> <span>Favorites</span>
+                                </a>
+                            </li>
+                            <div class="collapse" id="collapseExample">
+                                <li class="list-group-item">Morbi leo risus</li>
+                                <li class="list-group-item">Porta ac consectetur ac</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                            </div>
+                            <li class="list-group-item">
+                                <select class="form-control" id="sortlocation">
+                                    <option value="">Preferred Location</option>
+                                    <option value="Makati City">Makati City</option>
+                                    <option value="Makati City">Makati City</option>
+                                    <option value="Makati City">Makati City</option>
+                                </select>
+                            </li>
+                            <li class="list-group-item">
+                                <select class="form-control" id="sortlocation" style="padding: 5px;">
+                                    <option value="">Preferred Salary</option>
+                                    <option value="Makati City">$150 - $300</option>
+                                    <option value="Makati City">$300 - $500</option>
+                                    <option value="Makati City">$500 - $1000</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-9">
+                        <!-- Search bar -->
+                        <div class="card search-bar-css">
+                            <div class="form-group btn-group mb-3">
+                                <input type="text" class="form-control" id="searchBar" placeholder="Search a job"
+                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="btn-group-append">
+                                    <button class="btn btn-secondary" type="button"><i
+                                            class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+
+                        <!-- pagination -->
+                        <div class="d-flex justify-content-end" id="pagination" style="margin-top: 10px;">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- job list -->
+                        <ul class="list-group" id="jobList">
+                            <div id="listData"></div>
+                        </ul>
+                        <!-- pagination -->
+                        <div class="d-flex justify-content-end" id="pagination-lower" style="margin-top: 10px;">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- job Details modal -->
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" style="border-radius: 10px;">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><span id="jobTitle"></span>
+                                    <small id="configs">
+                                        (<a href="#edit" data-toggle="modal" data-target="#postJobModal"
+                                            id="edit">edit</a>
+                                        <a href="#delete" data-toggle="snackbar" data-content="Job post deleted successfully" id="delete">delete</a>)
+                                    </small>
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="d-flex justify-content-between">
+                                    <span>
+                                        <p>Pay : <b><span id="amount"></span></b></p>
+                                        <p>Location : <span id="jobLocation"></span></p>
+                                    </span>
+                                    <span>
+                                        <p style="color: grey;">Posted by <span id="jobPoster"></span></p>
+                                        <p style="color: grey;">Date Posted : <span id="datePosted"></span></p>
+                                    </span>
+                                </div>
+                                <div class="d-flex justify-content-around">
+                                    <button type="button" class="btn text-light btn-modal" data-toggle="modal" data-target="#contactModal"
+                                        style="border-radius: 20px;padding: 10px; background-color: #3A5F0B">Get in touch</button>
+                                    <button id="saveFavorites" class="btn btn-outline-secondary btn-modal"
+                                        style="border-radius: 20px;padding: 10px;">Save</button>
+                                </div>
+                                <hr />
+                                <h5>Job Description</h5>
+                                <p id="jobDescription"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- contact information modal -->
+                <div class="modal fade" id="contactModal" tabindex="-1" role="dialog"
+                    aria-labelledby="postJobModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" style="border-radius: 10px;">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="postJobModalLabel">Contact information</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col" style="float: inline-end;">
+                                        <p>Email</p>
+                                        <p>Phone #</p>
+                                        <p>Address</p>
+                                        <p>Poster</p>
+                                    </div>
+                                    <div class="col">
+                                        <p id="jobEmail"></p>
+                                        <p id="jobPhone"></p>
+                                        <p id="jobAdd"></p>
+                                        <p id="jobPoster2"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- modal for job posting -->
+                <div class="modal fade" id="postJobModal" tabindex="-1" role="dialog"
+                    aria-labelledby="postJobModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" style="border-radius: 10px;">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="postJobModalLabel"><i class="far fa-plus-square"></i> Post a Job</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="JobForm" method="POST" class="needs-validation" novalidate>
+                                <label>Job Title
+                                    <small id="emailHelp" class="form-text text-muted">(e.g. Lawn cutter, Pool cleaner,
+                                        etc.)</small>
+                                </label>
+                                <input type="text" class="form-control" name="title" id="title" required />
+                                <label>Amount to pay</label>
+                                <input type="text" class="form-control" name="payment_amount" id="payment_amount"
+                                    required />
+                                <label>Description
+                                    <small id="emailHelp" class="form-text text-muted">(e.g. Who are you?, What's the job?,
+                                        etc.)</small>
+                                </label>
+                                <textarea class="form-control" rows="5" name="description" id="description"
+                                    required></textarea>
+                                
+                                <div class="row">
+                                    <div class="col">
+                                        <label>City</label>
+                                        <input type="text" class="form-control" name="city" id="city" required />
+                                    </div>
+                                    <div class="col">
+                                        <label>State</label>
+                                        <input type="text" class="form-control" name="state" id="state" required />
+                                    </div>
+                                </div>
+                                <label>Email</label>
+                                <input type="email" class="form-control" name="email" id="email" required />
+                                <label>Phone</label>
+                                <input type="text" class="form-control" name="phone_number" id="phone_number"
+                                    required />
+                                <label>Address</label>
+                                <input type="text" class="form-control" name="address" id="address" required />
+                                <button type="submit" data-toggle="snackbar" data-content="New Job Posted!" class="btn text-light form-control" id="postJob"
+                                    style="margin-top: 10px; background-color: #3A5F0B;">Post</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="scripts/pages/jobList.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+      integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/FezVrasta/snackbarjs/1.1.0/dist/snackbar.min.js"></script>
+    <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
+</body>
+
+</html>

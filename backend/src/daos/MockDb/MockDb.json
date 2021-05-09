@@ -1,0 +1,19 @@
+{
+  "foods": [
+    {
+      "name": "Rice",
+      "email": "sean.maxwell@gmail.com",
+      "id": 159123164363
+    },
+    {
+      "name": "Chicken",
+      "email": "gordan.freeman@halflife.com",
+      "id": 906524522143
+    },
+    {
+      "name": "Salmon",
+      "email": "jsmith@yahoo.com",
+      "id": 357437875835
+    }
+  ]
+}
